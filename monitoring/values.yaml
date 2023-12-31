@@ -1,0 +1,20 @@
+kube-prometheus-stack:
+  nodeExporter:
+    enabled: true
+  kubeStateMetrics:
+    enabled: true
+  defaultRules:
+    create: false
+  grafana:
+    enabled: true
+  alertmanager:
+    enabled: false
+
+prometheus-mysql-exporter:
+  podLabels:
+    release: monitoring
+  mysql:
+    db: "db"
+    host: "backends-mysql.backends"
+    pass: "password"
+    user: "monitoring"

@@ -1,0 +1,12 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ScrapeConfig
+metadata:
+  name: backends-config
+  labels:
+    release: {{ $.Release.Name | quote }}
+spec:
+  staticConfigs:
+    - labels:
+        job: mysql
+      targets:
+        - {{ $.Release.Name }}-prometheus-mysql-exporter:9104

@@ -1,0 +1,6 @@
+mysql:
+  auth:
+    rootPassword: password
+    database: "db"
+
+    password: password
